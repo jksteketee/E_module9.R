@@ -26,7 +26,7 @@ boxplot(msleep$sleep_total[msleep$vore !="NA"]~ msleep$vore[msleep$vore !="NA"],
         ylab= "Sleep Total", xlab= "Diet Type")
 
 # Insectivores appear to get the most amount of sleep on average, while the other three types are roughly similiar. 
-#There is much more variation in total sleep in both carnivores and herbivores, than omnivores. 
+#There is much more variation in total sleep in both carnivores and herbivores, than omnivores.. 
 
 
 
