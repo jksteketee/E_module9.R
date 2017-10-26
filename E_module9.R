@@ -34,8 +34,15 @@ msleep$sleep_cycle
 msleep$logbw <-log(msleep$bodywt)
 plot(msleep$logbw, msleep$sleep_cycle, xlab="log body size", ylab="sleep cycle length", na.rm=TRUE)
 
-ggplot(data=subset(msleep, !is.na(conservation)), aes(x=logbw, y=sleep_cycle, group=conservation, color=conservation, na.rm=T)+
-  geom_point()+
-  stat_smooth(method="lm", se=F)+
-  facet_wrap(~conservation)
+        
+ggplot(data=subset(msleep, !is.na(conservation)), aes(x=logbw, y=sleep_cycle, group=conservation, color=conservation, na.rm=T))+
+          geom_point()+
+          stat_smooth(method="lm", se=F)+
+          facet_wrap(~conservation)
+  
+
+        
+        
+        
+  
 
