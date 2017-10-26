@@ -38,7 +38,9 @@ plot(msleep$logbw, msleep$sleep_cycle, xlab="log body size", ylab="sleep cycle l
 ggplot(data=subset(msleep, !is.na(conservation)), aes(x=logbw, y=sleep_cycle, group=conservation, color=conservation, na.rm=T))+
           geom_point()+
           stat_smooth(method="lm", se=F)+
-          facet_wrap(~conservation)
+          facet_wrap(~conservation)+labs(x="log body size", y= "sleep cycle length")
+
+## As body size increases sleep cycle length appears to increase as well. We can only make conclusions about 2 conservation types as the rest have no data or to little data. 
   
 
         
