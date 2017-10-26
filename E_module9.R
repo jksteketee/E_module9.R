@@ -42,9 +42,35 @@ ggplot(data=subset(msleep, !is.na(conservation)), aes(x=logbw, y=sleep_cycle, gr
 
 ## As body size increases sleep cycle length appears to increase as well. We can only make conclusions about 2 conservation types as the rest have no data or to little data. 
   
+### TASK 3 ###
+se <- function(x){
+semean <- sd(x, na.rm=TRUE)/sqrt(length(na.omit(x)))
+return(semean)
+}
 
+brainbody<-function(msleep){
+msleep <- msleep[!is.na(msleep$brainwt) & !is.na(msleep$bodywt) & !is.na(msleep$vore), ] 
+bbmean <- as.data.frame(tapply(msleep$brainwt/msleep$bodywt, msleep$vore, mean))
+bbse <- as.data.frame(tapply(msleep$brainwt/msleep$bodywt, msleep$vore, se)) 
+brain_body_ratio<-cbind(bbmean, bbse)
+colnames(brain_body_ratio) <-c("brain body mean", "brain body se")
+brain_body_ratio$vore<-rownames(brain_body_ratio)
+return(brain_body_ratio)
+}
         
         
-        
-  
+brain_body_r<- brainbody(msleep)
+
+brain_body_r
+
+## We are not sure how to rename the very first column in this data set? Is it something to do with the cbind function? 
+
+### Coding side by side and shared ideas and code. We used Git and Github to move code accross to each other. 
+
+
+
+
+
+
+
 
