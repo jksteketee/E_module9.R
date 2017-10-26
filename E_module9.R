@@ -7,7 +7,7 @@ data("msleep")
 ?msleep
 
 head(msleep)
-
+list(msleep)
 #1. How many different diet types are there? 
 #Make a boxplot comparing the daily sleep totals across the vore categories, excluding rows that 
 #do not have data in the vore column. Remember to include informative axis labels. 
@@ -28,7 +28,10 @@ boxplot(msleep$sleep_total[msleep$vore !="NA"]~ msleep$vore[msleep$vore !="NA"],
 # Insectivores appear to get the most amount of sleep on average, while the other three types are roughly similiar. 
 #There is much more variation in total sleep in both carnivores and herbivores, than omnivores.. 
 
+### TASK 2 ###
+msleep$bodywt
+msleep$sleep_cycle
+msleep$logbw <-log(msleep$bodywt)
+plot(msleep$logbw, msleep$sleep_cycle, xlab="log body size", ylab="sleep cycle length", na.rm=TRUE)
+ggplot(data=msleep, aes(x=logbw, y=sleep_cycle, group=conservation, color=conservation, na.rm=TRUE))+geom_point()+facet_wrap(~conservation)
 
-
-       
-  
