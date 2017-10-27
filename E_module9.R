@@ -1,6 +1,6 @@
 #NR995 Module 9 HW
-#Jess Steketee and Keir Mcartney
-#Last updated: October 25 2017
+#Jess Steketee and Keir Macartney
+#Last updated: October 27 2017
 
 library(ggplot2)
 data("msleep")
@@ -65,7 +65,7 @@ brain_body_r
 
 ## We are not sure how to rename the very first column in this data set? Is it something to do with the cbind function? 
 
-### Coding side by side and shared ideas and code. We used Git and Github to move code accross to each other. 
+## Coded side by side and shared ideas and code. We used Git and Github to move code accross to each other. 
 
 
 
