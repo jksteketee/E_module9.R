@@ -48,18 +48,18 @@ semean <- sd(x, na.rm=TRUE)/sqrt(length(na.omit(x)))
 return(semean)
 }
 
-brainbody<-function(msleep){
+brain_body_ratio<-function(msleep){
 msleep <- msleep[!is.na(msleep$brainwt) & !is.na(msleep$bodywt) & !is.na(msleep$vore), ] 
 bbmean <- as.data.frame(tapply(msleep$brainwt/msleep$bodywt, msleep$vore, mean))
 bbse <- as.data.frame(tapply(msleep$brainwt/msleep$bodywt, msleep$vore, se)) 
-brain_body_ratio<-cbind(bbmean, bbse)
-colnames(brain_body_ratio) <-c("brain body mean", "brain body se")
-brain_body_ratio$vore<-rownames(brain_body_ratio)
-return(brain_body_ratio)
+brain_body_ratio1<-cbind(bbmean, bbse)
+colnames(brain_body_ratio) <-c("brain_body_mean", "brain_body_se")
+brain_body_ratio1$vore<-rownames(brain_body_ratio1)
+return(brain_body_ratio1)
 }
         
         
-brain_body_r<- brainbody(msleep)
+brain_body_r<- brain_body_ratio(msleep)
 
 brain_body_r
 
